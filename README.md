@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here]([https://your-solution-url.com](https://www.frontendmentor.io/solutions/blog-card-preview-OFAhOETmEC))
 - Live Site URL: [Add live site URL here](https://frontend-mentor-cardpreview-alexcdnl.netlify.app/)
 
 
