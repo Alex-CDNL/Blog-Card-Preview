@@ -1,9 +1,123 @@
+@charset "UTF-8";
+@font-face {
+  font-family: figtree-bold;
+  src: url(../assets/fonts/static/Figtree-ExtraBold.ttf);
+}
+@font-face {
+  font-family: figtree-medium;
+  src: url(../assets/fonts/static/Figtree-Medium.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(47, 88%, 63%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Remplace height par min-height */
+  padding: 1rem; /* Ajoute un peu de padding pour éviter que le contenu colle aux bords */
+}
+
+.container {
+  background-color: hsl(0, 0%, 100%);
+  width: 90%; /* Remplace max-width fixe par une largeur relative */
+  max-width: 384px; /* Garde une limite raisonnable pour les grands écrans */
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1.5rem; /* Utilise rem pour le padding */
+  border-radius: 20px;
+  font-family: figtree-medium, sans-serif;
+  filter: drop-shadow(8px 8px #000000);
+}
+.container img {
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  width: 100%; /* L'image prend toute la largeur disponible */
+  height: auto; /* Garde les proportions */
+}
+.container .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Utilise rem pour les espacements */
+}
+.container .content .tag {
+  background-color: hsl(47, 88%, 63%);
+  width: 82px;
+  height: 29px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .content .tag p {
+  font-weight: 800;
+  color: hsl(0, 0%, 7%);
+  font-size: 0.875rem; /* Taille de police relative */
+}
+.container .content .date {
+  font-size: 0.875rem; /* Taille adaptée */
+}
+.container .content h1 {
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+  /* Taille dynamique entre 20px et 24px */
+  color: hsl(0, 0%, 7%);
+  font-family: figtree-bold, sans-serif;
+}
+.container .content h1:hover {
+  color: hsl(47, 88%, 63%);
+}
+.container .content .description {
+  color: hsl(0, 0%, 42%);
+  margin-bottom: 1.5rem;
+  font-size: clamp(0.875rem, 3vw, 1rem); /* Texte ajustable */
+}
+.container .author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.container .author img {
+  margin-bottom: 0;
+  width: 32px;
+  height: 32px;
+}
+.container .author p {
+  font-size: 0.875rem;
+}
+
 .attribution {
-  font-size: 11px;
+  font-size: 0.6875rem; /* 11px en rem */
   text-align: center;
+  margin-top: 0.625rem;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* Media Queries pour petits écrans */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+  .content {
+    gap: 0.5rem;
+  }
+  .tag {
+    width: 70px;
+    height: 25px;
+    padding: 4px 8px;
+  }
+  .author img {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

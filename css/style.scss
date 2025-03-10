@@ -1,7 +1,125 @@
+$yellow: hsl(47, 88%, 63%);
+$white: hsl(0, 0%, 100%);
+$gray500: hsl(0, 0%, 42%);
+$gray950: hsl(0, 0%, 7%);
+
+@font-face {
+  font-family: figtree-bold;
+  src: url(../assets/fonts/static/Figtree-ExtraBold.ttf);
+}
+@font-face {
+  font-family: figtree-medium;
+  src: url(../assets/fonts/static/Figtree-Medium.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Remplace height par min-height */
+  padding: 1rem; /* Ajoute un peu de padding pour éviter que le contenu colle aux bords */
+}
+
+.container {
+  background-color: $white;
+  width: 90%; /* Remplace max-width fixe par une largeur relative */
+  max-width: 384px; /* Garde une limite raisonnable pour les grands écrans */
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1.5rem; /* Utilise rem pour le padding */
+  border-radius: 20px;
+  font-family: figtree-medium, sans-serif;
+  filter: drop-shadow(8px 8px #000000);
+  img {
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    width: 100%; /* L'image prend toute la largeur disponible */
+    height: auto; /* Garde les proportions */
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Utilise rem pour les espacements */
+    .tag {
+      background-color: $yellow;
+      width: 82px;
+      height: 29px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-weight: 800;
+        color: $gray950;
+        font-size: 0.875rem; /* Taille de police relative */
+      }
+    }
+    .date {
+      font-size: 0.875rem; /* Taille adaptée */
+    }
+    h1 {
+      font-size: clamp(1.25rem, 4vw, 1.5rem);
+      &:hover {
+        color: $yellow;
+      } /* Taille dynamique entre 20px et 24px */
+      color: $gray950;
+      font-family: figtree-bold, sans-serif;
+    }
+    .description {
+      color: $gray500;
+      margin-bottom: 1.5rem;
+      font-size: clamp(0.875rem, 3vw, 1rem); /* Texte ajustable */
+    }
+  }
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    img {
+      margin-bottom: 0;
+      width: 32px;
+      height: 32px;
+    }
+    p {
+      font-size: 0.875rem;
+    }
+  }
+}
+
 .attribution {
-  font-size: 11px;
+  font-size: 0.6875rem; /* 11px en rem */
   text-align: center;
+  margin-top: 0.625rem;
   a {
     color: hsl(228, 45%, 44%);
+  }
+}
+
+/* Media Queries pour petits écrans */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+  .content {
+    gap: 0.5rem;
+  }
+  .tag {
+    width: 70px;
+    height: 25px;
+    padding: 4px 8px;
+  }
+  .author img {
+    width: 28px;
+    height: 28px;
   }
 }
